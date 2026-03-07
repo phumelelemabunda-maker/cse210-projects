@@ -1,9 +1,29 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise4 Project.");
+        List<int> numbers = new List<int>();
+
+        Console.WriteLine("Enter numbers (0 to stop):");
+
+        int number = -1;
+
+        while (number != 0)
+        {
+            number = int.Parse(Console.ReadLine());
+
+            if (number != 0)
+                numbers.Add(number);
+        }
+
+        int sum = 0;
+
+        foreach (int num in numbers)
+            sum += num;
+
+        Console.WriteLine($"The sum is: {sum}");
     }
 }
